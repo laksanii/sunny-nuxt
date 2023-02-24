@@ -282,7 +282,7 @@
               </div>
               <div class="mb-3">
                 <label for="province" class="form-label"> Provinsi </label>
-                <select
+                <!-- <select
                   class="form-select select-input"
                   aria-label="province"
                   name="province"
@@ -291,11 +291,18 @@
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
-                </select>
+                </select> -->
+                <Select2
+                  v-model="province"
+                  :options="provinces"
+                  :settings="{
+                    placeholder: 'Pilih Provinsi',
+                  }"
+                />
               </div>
               <div class="mb-3">
                 <label for="city" class="form-label"> Kota </label>
-                <select
+                <!-- <select
                   class="form-select select-input"
                   aria-label="city"
                   name="city"
@@ -304,11 +311,18 @@
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
-                </select>
+                </select> -->
+                <Select2
+                  v-model="city"
+                  :options="cities"
+                  :settings="{
+                    placeholder: 'Pilih Kota',
+                  }"
+                />
               </div>
               <div class="mb-3">
                 <label for="district" class="form-label"> Kecamatan </label>
-                <select
+                <!-- <select
                   class="form-select select-input"
                   aria-label="district"
                   name="district"
@@ -317,7 +331,14 @@
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
-                </select>
+                </select> -->
+                <Select2
+                  v-model="district"
+                  :options="districts"
+                  :settings="{
+                    placeholder: 'Pilih Kecamatan',
+                  }"
+                />
               </div>
               <div class="mb-3">
                 <label for="post_code" class="form-label">Kode Pos</label>
@@ -530,6 +551,24 @@ export default {
     return {
       costume: ref(),
       costumes: [
+        { id: 1, text: "apple" },
+        { id: 2, text: "berry" },
+        { id: 3, text: "cherry" },
+      ],
+      province: ref(),
+      provinces: [
+        { id: 1, text: "apple" },
+        { id: 2, text: "berry" },
+        { id: 3, text: "cherry" },
+      ],
+      city: ref(),
+      cities: [
+        { id: 1, text: "apple" },
+        { id: 2, text: "berry" },
+        { id: 3, text: "cherry" },
+      ],
+      district: ref(),
+      districts: [
         { id: 1, text: "apple" },
         { id: 2, text: "berry" },
         { id: 3, text: "cherry" },
