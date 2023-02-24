@@ -82,57 +82,36 @@
             >
           </div>
         </div>
-        <!-- Slider main container -->
-        <!-- <swiper
+        <swiper
+          :clickable="true"
           :slidesPerView="4"
-          :loop="true"
+          :spaceBetween="30"
           :autoplay="{
             delay: 2000,
             disableOnInteraction: false,
           }"
-          :clickable="true"
-          :breakpoints="{
-            '320': {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            '576': {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            '768': {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            '992': {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-            '1200': {
-              slidesPerView: 4,
-              spaceBetween: 40,
-            },
-          }"
           :modules="modules"
-          class="swiper"
+          class="mySwiper"
         >
-          
           <swiper-slide>
             <img src="assets/images/gawr_gura.jpg" alt="gura" />
           </swiper-slide>
           <swiper-slide>
-            <img src="assets/images/kobo_kanaeru.jpg" alt="kobo" />
+            <img src="assets/images/kobo_kanaeru.jpg" alt="gura" />
           </swiper-slide>
           <swiper-slide>
-            <img src="assets/images/nahida_kusanali.jpg" alt="nahida" />
+            <img src="assets/images/nahida_kusanali.jpg" alt="gura" />
           </swiper-slide>
           <swiper-slide>
-            <img src="assets/images/nilou.jpg" alt="nilou" />
+            <img src="assets/images/nilou.jpg" alt="gura" />
           </swiper-slide>
           <swiper-slide>
-            <img src="assets/images/nahida_kusanali.jpg" alt="nilou" />
+            <img src="assets/images/gawr_gura.jpg" alt="gura" />
           </swiper-slide>
-        </swiper> -->
+          <swiper-slide>
+            <img src="assets/images/kobo_kanaeru.jpg" alt="gura" />
+          </swiper-slide>
+        </swiper>
       </div>
     </section>
 
@@ -546,9 +525,22 @@
 </template>
 
 <script>
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
+
+import { Autoplay } from "swiper";
+
 export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   setup() {
     return {
+      modules: [Autoplay],
       costume: ref(),
       costumes: [
         { id: 1, text: "apple" },
