@@ -146,7 +146,7 @@
                 <label for="costume_id" class="form-label"
                   >Kostum Character
                 </label>
-                <select
+                <!-- <select
                   class="form-select select-input"
                   aria-label="costume_id"
                   name="costume_id"
@@ -155,7 +155,14 @@
                   <option value="1">One</option>
                   <option value="2">Two</option>
                   <option value="3">Three</option>
-                </select>
+                </select> -->
+                <Select2
+                  v-model="costume"
+                  :options="costumes"
+                  :settings="{
+                    placeholder: 'Pilih Karakter',
+                  }"
+                />
               </div>
               <div class="mb-3">
                 <label for="accessories">Tambahan aksesories</label>
@@ -389,6 +396,7 @@
         </div>
       </div>
     </section>
+
     <!-- Cek Order -->
     <section class="section vh-100 bg-white" id="check">
       <div class="container">
@@ -515,3 +523,18 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  setup() {
+    return {
+      costume: ref(),
+      costumes: [
+        { id: 1, text: "apple" },
+        { id: 2, text: "berry" },
+        { id: 3, text: "cherry" },
+      ],
+    };
+  },
+};
+</script>
