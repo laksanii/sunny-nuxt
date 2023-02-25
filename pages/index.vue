@@ -32,7 +32,7 @@
               <span
                 class="nav-link d-flex align-items-center active-nav"
                 aria-current="page"
-                onclick="scrollOn('#hero')"
+                @click="scrollTo('Clicked')"
                 id="span-home"
                 >Home</span
               >
@@ -84,8 +84,28 @@
         </div>
         <swiper
           :clickable="true"
-          :slidesPerView="4"
+          :slidesPerView="1"
           :spaceBetween="30"
+          :breakpoints="{
+            '576': {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            // when window width is >= 480px
+            '768': {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            // when window width is >= 640px
+            '992': {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            '1200': {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+          }"
           :autoplay="{
             delay: 2000,
             disableOnInteraction: false,
@@ -123,25 +143,15 @@
             <form action="">
               <div class="mb-3">
                 <label for="costume_id" class="form-label"
-                  >Kostum Character
+                  >Kostum Karakter
                 </label>
-                <!-- <select
-                  class="form-select select-input"
-                  aria-label="costume_id"
-                  name="costume_id"
-                >
-                  <option selected>Pilih Karakter</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select> -->
-                <Select2
+                <v-select
                   v-model="costume"
-                  :options="costumes"
-                  :settings="{
-                    placeholder: 'Pilih Karakter',
-                  }"
-                />
+                  :options="cities"
+                  label="name"
+                  class="form-control p-0"
+                  placeholder="Pilih karakter"
+                ></v-select>
               </div>
               <div class="mb-3">
                 <label for="accessories">Tambahan aksesories</label>
@@ -261,63 +271,33 @@
               </div>
               <div class="mb-3">
                 <label for="province" class="form-label"> Provinsi </label>
-                <!-- <select
-                  class="form-select select-input"
-                  aria-label="province"
-                  name="province"
-                >
-                  <option selected>Pilih Provinsi</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select> -->
-                <Select2
+                <v-select
                   v-model="province"
                   :options="provinces"
-                  :settings="{
-                    placeholder: 'Pilih Provinsi',
-                  }"
-                />
+                  label="text"
+                  class="form-control p-0"
+                  placeholder="Pilih Provinsi"
+                ></v-select>
               </div>
               <div class="mb-3">
                 <label for="city" class="form-label"> Kota </label>
-                <!-- <select
-                  class="form-select select-input"
-                  aria-label="city"
-                  name="city"
-                >
-                  <option selected>Pilih Kota</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select> -->
-                <Select2
+                <v-select
                   v-model="city"
                   :options="cities"
-                  :settings="{
-                    placeholder: 'Pilih Kota',
-                  }"
-                />
+                  label="name"
+                  class="form-control p-0"
+                  placeholder="Pilih Kota"
+                ></v-select>
               </div>
               <div class="mb-3">
                 <label for="district" class="form-label"> Kecamatan </label>
-                <!-- <select
-                  class="form-select select-input"
-                  aria-label="district"
-                  name="district"
-                >
-                  <option selected>Pilih Kecamatan</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select> -->
-                <Select2
+                <v-select
                   v-model="district"
                   :options="districts"
-                  :settings="{
-                    placeholder: 'Pilih Kecamatan',
-                  }"
-                />
+                  label="text"
+                  class="form-control p-0"
+                  placeholder="Pilih Kecamatan"
+                ></v-select>
               </div>
               <div class="mb-3">
                 <label for="post_code" class="form-label">Kode Pos</label>
@@ -525,6 +505,8 @@
 </template>
 
 <script>
+import { VueSelect as vSelect } from "vue-select";
+import "vue-select/dist/vue-select.css";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 
@@ -537,34 +519,53 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+    vSelect,
   },
-  setup() {
+  methods: {
+    scrollTo(to) {
+      console.log(to);
+    },
+    onSelected: function (opt) {
+      this.region = opt.region;
+    },
+    onDeselected: function (opt) {
+      this.region = "";
+    },
+  },
+  data() {
     return {
-      modules: [Autoplay],
-      costume: ref(),
+      costume: "",
       costumes: [
         { id: 1, text: "apple" },
         { id: 2, text: "berry" },
         { id: 3, text: "cherry" },
       ],
-      province: ref(),
+      province: "",
       provinces: [
         { id: 1, text: "apple" },
         { id: 2, text: "berry" },
         { id: 3, text: "cherry" },
       ],
-      city: ref(),
+      city: "",
       cities: [
-        { id: 1, text: "apple" },
-        { id: 2, text: "berry" },
-        { id: 3, text: "cherry" },
+        { id: 1, name: "city 1", region: "region A" },
+        { id: 2, name: "city 2", region: "region A" },
+        { id: 3, name: "city 3", region: "region B" },
+        { id: 4, name: "city 4", region: "region C" },
+        { id: 5, name: "city 5", region: "region D" },
       ],
-      district: ref(),
+      selected: "",
+      district: "",
       districts: [
         { id: 1, text: "apple" },
         { id: 2, text: "berry" },
         { id: 3, text: "cherry" },
       ],
+    };
+  },
+  setup() {
+    return {
+      modules: [Autoplay],
     };
   },
 };

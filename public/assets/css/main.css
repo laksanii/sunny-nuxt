@@ -11251,6 +11251,10 @@ body {
   padding-bottom: 30px;
 }
 
+.vs__dropdown-toggle{
+  border: none;
+}
+
 #check, #return {
   padding-top: 150px;
 }
