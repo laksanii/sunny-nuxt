@@ -378,7 +378,7 @@
     </section>
 
     <!-- Cek Order -->
-    <section class="section vh-100 bg-white" id="check">
+    <!-- <section class="section vh-100 bg-white" id="check">
       <div class="container">
         <h3 class="text-center mb-4">Cek Order</h3>
         <div class="container px-4 d-flex flex-column align-items-center">
@@ -423,6 +423,124 @@
                   <td>25 Februari 2023</td>
                   <td class="text-center">DP</td>
                   <td class="text-center">Sedang dikirim</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="section vh-100 bg-white" id="check">
+      <div class="container">
+        <h3 class="text-center mb-4">Cek Order</h3>
+        <div class="container px-4 d-flex flex-column align-items-center">
+          <div class="col-12 col-md-6">
+            <form action="" class="mx-auto">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Kode Order"
+                />
+                <button
+                  class="btn btn-primary"
+                  type="submit"
+                  id="button-addon2"
+                >
+                  Cek
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="check-result">
+            <div class="result-container">
+              <div class="field d-flex mb-1 bg-primary rounded gap-1">
+                <div class="label col-12 py-1 px-2 fw-bold">
+                  Kode-Order0123456789
+                </div>
+              </div>
+              <div class="field d-flex mb-1 rounded gap-1">
+                <div class="label col-4 bg-primary py-1 px-2 rounded-start">
+                  Nama Lengkap
+                </div>
+                <div class="value col-8 bg-primary py-1 px-2 rounded-end">
+                  Prasetyo Adi Pratama Nugroho
+                </div>
+              </div>
+              <div class="field d-flex mb-1 rounded gap-1">
+                <div class="label col-4 bg-primary py-1 px-2 rounded-start">
+                  Alamat Lengkap
+                </div>
+                <div class="value col-8 bg-primary py-1 px-2 rounded-end">
+                  Jl. Asemrowo Baru No.14 RT.01/RW.03 Kec. Asemrowo, Surabaya,
+                  Jawa Timur
+                </div>
+              </div>
+              <div class="field d-flex mb-1 rounded gap-1">
+                <div class="label col-4 bg-primary py-1 px-2 rounded-start">
+                  Karakter
+                </div>
+                <div class="value col-8 bg-primary py-1 px-2 rounded-end">
+                  Kobo Kanaeuwu Yaeger
+                </div>
+              </div>
+              <div class="field d-flex mb-1 rounded gap-1">
+                <div class="label col-4 bg-primary py-1 px-2 rounded-start">
+                  Tanggal Sewa
+                </div>
+                <div class="value col-8 bg-primary py-1 px-2 rounded-end">
+                  20 Maret 2023
+                </div>
+              </div>
+              <div class="field d-flex mb-1 rounded gap-1">
+                <div class="label col-4 bg-primary py-1 px-2 rounded-start">
+                  Total Harga
+                </div>
+                <div class="value col-8 bg-primary py-1 px-2 rounded-end">
+                  Rp 150.000
+                </div>
+              </div>
+              <div class="field d-flex mb-1 rounded gap-1">
+                <div class="label col-4 bg-primary py-1 px-2 rounded-start">
+                  Tambahan
+                </div>
+                <div class="value col-8 bg-primary py-1 px-2 rounded-end">
+                  <ul class="list-group">
+                    <li class="list-group-item border-0 bg-transparent">
+                      Sepatu (10.000)
+                    </li>
+                    <li class="list-group-item border-0 bg-transparent">
+                      Pistol (20.000)
+                    </li>
+                    <li class="list-group-item border-0 bg-transparent">
+                      Pedang (15.000)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="field d-flex mb-1 rounded gap-1">
+                <div class="label col-4 bg-primary py-1 px-2 rounded-start">
+                  Pengembalian
+                </div>
+                <div class="value col-8 bg-primary py-1 px-2 rounded-end">
+                  Belum dikembalikan
+                </div>
+              </div>
+            </div>
+            <table id="result-table" class="bg-primary rounded w-100">
+              <thead>
+                <tr>
+                  <th class="text-center">Status Pembayaran</th>
+                  <th class="text-center">Status Pengiriman</th>
+                  <th class="text-center">No Resi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">DP</td>
+                  <td class="text-center">Sedang dikirim</td>
+                  <td class="text-center">JNT1234567890</td>
                 </tr>
               </tbody>
             </table>
