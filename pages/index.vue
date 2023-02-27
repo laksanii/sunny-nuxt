@@ -114,22 +114,22 @@
           class="mySwiper"
         >
           <swiper-slide>
-            <img src="assets/images/gawr_gura.jpg" alt="gura" />
+            <img src="/assets/images/gawr_gura.jpg" alt="gura" />
           </swiper-slide>
           <swiper-slide>
-            <img src="assets/images/kobo_kanaeru.jpg" alt="gura" />
+            <img src="/assets/images/kobo_kanaeru.jpg" alt="gura" />
           </swiper-slide>
           <swiper-slide>
-            <img src="assets/images/nahida_kusanali.jpg" alt="gura" />
+            <img src="/assets/images/nahida_kusanali.jpg" alt="gura" />
           </swiper-slide>
           <swiper-slide>
-            <img src="assets/images/nilou.jpg" alt="gura" />
+            <img src="/assets/images/nilou.jpg" alt="gura" />
           </swiper-slide>
           <swiper-slide>
-            <img src="assets/images/gawr_gura.jpg" alt="gura" />
+            <img src="/assets/images/gawr_gura.jpg" alt="gura" />
           </swiper-slide>
           <swiper-slide>
-            <img src="assets/images/kobo_kanaeru.jpg" alt="gura" />
+            <img src="a/ssets/images/kobo_kanaeru.jpg" alt="gura" />
           </swiper-slide>
         </swiper>
       </div>
