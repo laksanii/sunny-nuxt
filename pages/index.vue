@@ -13,7 +13,7 @@
           <span class="text-pink"> Sunnycos-Rent </span>
         </a>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler me-3 me-sm-0"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -30,33 +30,33 @@
           <ul class="navbar-nav ms-auto mb-lg-0 px-2">
             <li class="nav-item me-3 bg-white">
               <span
-                class="nav-link d-flex align-items-center active-nav"
+                class="ps-3 nav-link d-flex align-items-center active-nav"
                 aria-current="page"
-                @click="scrollTo('Clicked')"
+                v-on:click="scrollTo('#hero')"
                 id="span-home"
                 >Home</span
               >
             </li>
             <li class="nav-item me-3 bg-white">
               <span
-                class="nav-link d-flex align-items-center"
-                onclick="scrollOn('#form')"
+                class="ps-3 nav-link d-flex align-items-center"
+                @click="scrollTo('#form')"
                 id="span-form"
                 >Rent</span
               >
             </li>
             <li class="nav-item me-3 bg-white">
               <span
-                class="nav-link d-flex align-items-center"
-                onclick="scrollOn('#check')"
+                class="ps-3 nav-link d-flex align-items-center"
+                @click="scrollTo('#check')"
                 id="span-check"
                 >Cek Order</span
               >
             </li>
             <li class="nav-item me-3">
               <span
-                class="nav-link d-flex align-items-center bg-white"
-                onclick="scrollOn('#return')"
+                class="ps-3 nav-link d-flex align-items-center bg-white"
+                @click="scrollTo('#return')"
                 id="span-return"
                 >Pengembalian</span
               >
@@ -378,60 +378,8 @@
     </section>
 
     <!-- Cek Order -->
-    <!-- <section class="section vh-100 bg-white" id="check">
-      <div class="container">
-        <h3 class="text-center mb-4">Cek Order</h3>
-        <div class="container px-4 d-flex flex-column align-items-center">
-          <div class="col-12 col-md-6">
-            <form action="" class="mx-auto">
-              <div class="input-group mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Kode Order"
-                />
-                <button
-                  class="btn btn-primary"
-                  type="submit"
-                  id="button-addon2"
-                >
-                  Cek
-                </button>
-              </div>
-            </form>
-          </div>
-          <div class="container bg-primary rounded">
-            <table id="result-table" class="">
-              <thead>
-                <tr>
-                  <th>Nama</th>
-                  <th>Alamat Lengkap</th>
-                  <th>Karakter</th>
-                  <th>Tanggal Rental</th>
-                  <th class="text-center">Status Pembayaran</th>
-                  <th class="text-center">Status Pengiriman</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Prasetyo Adi Pratama Nugroho</td>
-                  <td>
-                    Jl. Asemrowo Baru No.14 RT.01/RW.03 Kec.Asemrowo, Surabaya,
-                    Jawa Timur
-                  </td>
-                  <td>Eren Kanaeru - Attack on VTuber</td>
-                  <td>25 Februari 2023</td>
-                  <td class="text-center">DP</td>
-                  <td class="text-center">Sedang dikirim</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section> -->
 
-    <section class="section vh-100 bg-white" id="check">
+    <section class="section min-vh-100 bg-white" id="check">
       <div class="container">
         <h3 class="text-center mb-4">Cek Order</h3>
         <div class="container px-4 d-flex flex-column align-items-center">
@@ -521,26 +469,30 @@
               </div>
               <div class="field d-flex mb-1 rounded gap-1">
                 <div class="label col-4 bg-primary py-1 px-2 rounded-start">
-                  Pengembalian
+                  Status Kembali
                 </div>
                 <div class="value col-8 bg-primary py-1 px-2 rounded-end">
                   Belum dikembalikan
                 </div>
               </div>
             </div>
-            <table id="result-table" class="bg-primary rounded w-100">
+            <table class="table bg-primary rounded">
               <thead>
                 <tr>
-                  <th class="text-center">Status Pembayaran</th>
-                  <th class="text-center">Status Pengiriman</th>
-                  <th class="text-center">No Resi</th>
+                  <th scope="col" class="text-center align-middle">
+                    Status Pembayaran
+                  </th>
+                  <th scope="col" class="text-center align-middle">
+                    Status Pengiriman
+                  </th>
+                  <th scope="col" class="text-center align-middle">Resi</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="table-group-divider">
                 <tr>
-                  <td class="text-center">DP</td>
-                  <td class="text-center">Sedang dikirim</td>
-                  <td class="text-center">JNT1234567890</td>
+                  <td class="text-center align-middle">DP</td>
+                  <td class="text-center align-middle">Sedang Dikirim</td>
+                  <td class="text-center align-middle">JNT-0987654321</td>
                 </tr>
               </tbody>
             </table>
@@ -603,16 +555,16 @@
         </div>
         <div class="col-12 col-lg-4 mb-3 d-flex justify-content-left gap-3">
           <div class="footer-nav">
-            <span onclick="scrollOn('#hero')">Home</span>
+            <span v-on:click="scrollTo('#hero')">Home</span>
           </div>
           <div class="footer-nav">
-            <span onclick="scrollOn('#form')">Rent</span>
+            <span v-on:click="scrollTo('#form')">Rent</span>
           </div>
           <div class="footer-nav">
-            <span onclick="scrollOn('#check')">Cek Order</span>
+            <span v-on:click="scrollTo('#check')">Cek Order</span>
           </div>
           <div class="footer-nav">
-            <span onclick="scrollOn('#return')">Pengembalian</span>
+            <span v-on:click="scrollTo('#return')">Pengembalian</span>
           </div>
         </div>
       </div>
@@ -641,17 +593,17 @@ export default {
   },
   methods: {
     scrollTo(to) {
-      console.log(to);
-    },
-    onSelected: function (opt) {
-      this.region = opt.region;
-    },
-    onDeselected: function (opt) {
-      this.region = "";
+      this.$router.replace({ name: this.$route.name, hash: to });
     },
   },
   data() {
     return {
+      data: [
+        ["", "Ford", "Volvo", "Toyota", "Honda"],
+        ["2016", 10, 11, 12, 13],
+        ["2017", 20, 11, 14, 13],
+        ["2018", 30, 15, 12, 13],
+      ],
       costume: "",
       costumes: [
         { id: 1, text: "apple" },
