@@ -129,7 +129,7 @@
             <img src="/assets/images/gawr_gura.jpg" alt="gura" />
           </swiper-slide>
           <swiper-slide>
-            <img src="a/ssets/images/kobo_kanaeru.jpg" alt="gura" />
+            <img src="/assets/images/kobo_kanaeru.jpg" alt="gura" />
           </swiper-slide>
         </swiper>
       </div>
