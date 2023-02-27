@@ -4,7 +4,7 @@
       <div class="container nav-box">
         <a class="navbar-brand d-flex align-items-center" href="#">
           <img
-            src="assets/images/logo.png"
+            src="/assets/images/logo.png"
             alt="Logo"
             width="30"
             height="24"

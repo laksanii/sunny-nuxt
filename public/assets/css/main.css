@@ -12976,7 +12976,7 @@ fieldset:disabled .btn {
 
 body {
   font-family: "Rubik", sans-serif;
-  background-image: url("../assets/images/bg.png");
+  background-image: url("/assets/images/bg.png");
   background-size: contain;
   background-position: center bottom;
   background-attachment: fixed;
