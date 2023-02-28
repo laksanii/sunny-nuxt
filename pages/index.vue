@@ -273,7 +273,7 @@
                 <label for="province" class="form-label"> Provinsi </label>
                 <v-select
                   v-model="province"
-                  :options="province"
+                  :options="[]"
                   label="province"
                   class="form-control p-0"
                   placeholder="Pilih Provinsi"
