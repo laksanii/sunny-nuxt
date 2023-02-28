@@ -147,7 +147,7 @@
                 </label>
                 <v-select
                   v-model="costume"
-                  :options="cities"
+                  :options="result.result"
                   label="name"
                   class="form-control p-0"
                   placeholder="Pilih karakter"
@@ -273,8 +273,8 @@
                 <label for="province" class="form-label"> Provinsi </label>
                 <v-select
                   v-model="province"
-                  :options="provinces"
-                  label="text"
+                  :options="province"
+                  label="province"
                   class="form-control p-0"
                   placeholder="Pilih Provinsi"
                 ></v-select>
@@ -594,6 +594,9 @@ export default {
   methods: {
     scrollTo(to) {
       this.$router.replace({ name: this.$route.name, hash: to });
+      this.result.result.forEach((item) => {
+        console.log(item.name);
+      });
     },
   },
   data() {
@@ -605,17 +608,7 @@ export default {
         ["2018", 30, 15, 12, 13],
       ],
       costume: "",
-      costumes: [
-        { id: 1, text: "apple" },
-        { id: 2, text: "berry" },
-        { id: 3, text: "cherry" },
-      ],
       province: "",
-      provinces: [
-        { id: 1, text: "apple" },
-        { id: 2, text: "berry" },
-        { id: 3, text: "cherry" },
-      ],
       city: "",
       cities: [
         { id: 1, name: "city 1", region: "region A" },
@@ -633,9 +626,14 @@ export default {
       ],
     };
   },
-  setup() {
+  async setup() {
+    const { data: result } = await useFetch(
+      "http://www.sunyycosrent-api.test/api/costume?all=true"
+    );
+
     return {
       modules: [Autoplay],
+      result,
     };
   },
 };
